@@ -4,18 +4,19 @@ class Conta
 {
     private $cpfTitular;
     private $nomeTitular;
-    private $saldo = 0;
+    private $saldo;
 
 
-    public function __construct(string $cpfTitular, string $nomeTitular, float $saldo)
+    public function __construct(string $cpfTitular, string $nomeTitular)
     {
         $this->cpfTitular = $cpfTitular;
+        $this->validaNomeTitular($nomeTitular);
         $this->nomeTitular = $nomeTitular;
-        $this->saldo = $saldo;
+        $this->saldo = 0;
     }
 
 
-    public function sacar(float $valorASacar) : void
+    public function saca(float $valorASacar) : void
     {
         if ($valorASacar > $this->saldo){
             echo "Saldo indisponível";
@@ -25,7 +26,7 @@ class Conta
     }
 
 
-    public function depositar(float $valorADepositar) : void
+    public function deposita(float $valorADepositar) : void
     {
         if ($valorADepositar <= 0) {
             echo "Valor precisa ser positivo";
@@ -35,7 +36,7 @@ class Conta
     }
 
 
-    public function transferir(float $valorATransferir, Conta $contaDestino) : void
+    public function transfere(float $valorATransferir, Conta $contaDestino) : void
     {
         if ($valorATransferir > $this->saldo) {
             echo "Saldo indisponível!";
@@ -43,5 +44,44 @@ class Conta
         }
             $this->sacar($valorATransferir);
             $contaDestino->depositar($valorATransferir);
+    }
+
+
+    public function recuperaCpfTitular(): string
+    {
+        return $this->cpfTitular;
+    }
+
+
+    public function defineCpfTitular(string $cpf): void
+    {
+        $this->cpfTitular = $cpf;
+    }
+
+
+    public function recuperaNomeTitular(): string
+    {
+        return $this->nomeTitular;
+    }
+
+
+    public function defineNomeTitular(string $nome): void
+    {
+        $this->nomeTitular = $nome;
+    }
+
+
+    public function recuperaSaldo() : float
+    {
+        return $this->saldo;
+    }
+
+    private function validaNomeTitular(string $nomeTitular)
+    {
+        if (strlen($nomeTitular) < 5)
+        {
+            echo "O nome do titular deve possuir pelo menos 5 caracteres";
+            exit();
+        }
     }
 }

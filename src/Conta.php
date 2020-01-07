@@ -2,17 +2,17 @@
 
 class Conta
 {
-    private $cpfTitular;
-    private $nomeTitular;
+    private $titular;
     private $saldo;
+    private static $numeroDeContas = 0;
 
 
-    public function __construct(string $cpfTitular, string $nomeTitular)
+    public function __construct(Titular $titular)
     {
-        $this->cpfTitular = $cpfTitular;
-        $this->validaNomeTitular($nomeTitular);
-        $this->nomeTitular = $nomeTitular;
+        $this->titular = $titular;
         $this->saldo = 0;
+
+        self::$numeroDeContas++;
     }
 
 
@@ -47,41 +47,32 @@ class Conta
     }
 
 
-    public function recuperaCpfTitular(): string
-    {
-        return $this->cpfTitular;
-    }
-
-
-    public function defineCpfTitular(string $cpf): void
-    {
-        $this->cpfTitular = $cpf;
-    }
-
-
-    public function recuperaNomeTitular(): string
-    {
-        return $this->nomeTitular;
-    }
-
-
-    public function defineNomeTitular(string $nome): void
-    {
-        $this->nomeTitular = $nome;
-    }
-
-
     public function recuperaSaldo() : float
     {
         return $this->saldo;
     }
 
-    private function validaNomeTitular(string $nomeTitular)
+
+    public function recuperaNomeTitular() : string
     {
-        if (strlen($nomeTitular) < 5)
-        {
-            echo "O nome do titular deve possuir pelo menos 5 caracteres";
-            exit();
-        }
+        return $this->titular->recuperaNome();
+    }
+
+
+    public function recuperaCpfTitular() : string
+    {
+        return $this->titular->recuperaCpf();
+    }
+
+
+    public static function recuperaNumeroDeContas() : int
+    {
+        return self::recuperaNumeroDeContas();
+    }
+
+
+    public function __destruct()
+    {
+        self::$numeroDeContas--;
     }
 }

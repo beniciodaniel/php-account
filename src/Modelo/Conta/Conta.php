@@ -5,7 +5,7 @@ namespace Banco\Modelo\Conta;
 class Conta
 {
     private $titular;
-    private $saldo;
+    protected $saldo;
     private static $numeroDeContas = 0;
 
 
@@ -21,6 +21,7 @@ class Conta
     public function saca(float $valorASacar) : void
     {
         $tarifaSaque = $valorASacar * 0.05;
+
         $valorSaque = $valorASacar + $tarifaSaque;
 
         if ($valorSaque > $this->saldo){

@@ -7,7 +7,7 @@ use Banco\Modelo\Endereco;
 
 require_once 'autoload.php';
 
-$conta = new Conta(new Titular('Goku', new Cpf("123.456.789-10"), new Endereco("Curitiba", 'Bairro Crazy', 'Rua dos Alfeneiros', '1234')));
+$conta = new Conta(new Titular('Goku', new Cpf("123.456.789-10"), new Endereco("Curitiba", 'Bairro Crazy', 'Rua dos Alfeneiros', '1234')), 2);
 
 $conta->deposita(1000);
 

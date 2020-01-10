@@ -1,11 +1,6 @@
 <?php
 
-use Banco\Modelo\Conta\Conta;
-use Banco\Modelo\Conta\ContaPoupanca;
-use Banco\Modelo\Conta\ContaCorrente;
-use Banco\Modelo\Conta\Titular;
-use Banco\Modelo\Cpf;
-use Banco\Modelo\Endereco;
+use Banco\Modelo\{Conta\Conta, Conta\ContaPoupanca, Conta\ContaCorrente, Conta\Titular, Cpf, Endereco};
 
 require_once 'autoload.php';
 

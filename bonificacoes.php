@@ -2,11 +2,11 @@
 
 use Banco\Service\ControladorDeBonificacoes;
 use Banco\Modelo\Cpf;
-use Banco\Modelo\Funcionario\{Diretor, Funcionario, Gerente};
+use Banco\Modelo\Funcionario\{Diretor, Gerente, Desenvolvedor};
 
 require_once 'autoload.php';
 
-$randomFuncionario = new Funcionario(
+$randomFuncionario = new Desenvolvedor(
     "Shiryu",
     new Cpf("123.456.789-10"),
     "Desenvolvedor",

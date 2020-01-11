@@ -7,7 +7,7 @@ namespace Banco\Modelo\Funcionario;
 use Banco\Modelo\Cpf;
 use Banco\Modelo\Pessoa;
 
-class Funcionario extends Pessoa
+abstract  class Funcionario extends Pessoa
 {
     private $cargo;
     private $salario;
@@ -28,6 +28,15 @@ class Funcionario extends Pessoa
     {
         $this->validaNome($nome);
         $this->nome = $nome;
+    }
+
+    public function recebeAumento(float $valorAumento)
+    {
+        if ($valorAumento < 0) {
+            echo "Aumento deve ser positivo";
+            return;
+        }
+        $this->salario += $valorAumento;
     }
 
     public function recuperaSalario() : float

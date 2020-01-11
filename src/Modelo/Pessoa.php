@@ -4,7 +4,7 @@
 namespace Banco\Modelo;
 
 
-class Pessoa
+abstract class Pessoa
 {
     protected $nome;
     protected $cpf;

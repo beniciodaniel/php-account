@@ -1,17 +1,12 @@
 <?php
 
-use Alura\Banco\Modelo\Cpf;
-use Alura\Banco\Modelo\Funcionario;
-use Alura\Banco\Modelo\Endereco;
-use Alura\Banco\Modelo\Conta\Conta;
-use Alura\Banco\Modelo\Conta\Titular;
+require_once 'autoload.php';
 
-require_once 'src/Modelo/Conta/Conta.php';
-require_once 'src/Modelo/Endereco.php';
-require_once 'src/Modelo/Pessoa.php';
-require_once 'src/Modelo/Conta/Titular.php';
-require_once 'src/Modelo/Funcionario.php';
-require_once 'src/Modelo/Cpf.php';
+use Banco\Modelo\Cpf;
+use Banco\Modelo\Funcionario;
+use Banco\Modelo\Endereco;
+use Banco\Modelo\Conta\Conta;
+use Banco\Modelo\Conta\Titular;
 
 
 $endereco = new Endereco("Curitiba", "Bairro Louco", "Rua Crazy","123");

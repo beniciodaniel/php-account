@@ -1,9 +1,9 @@
 <?php
 
-namespace Alura\Banco\Modelo;
+namespace Banco\Modelo;
 
 
-class Cpf
+class Cpf extends \Banco\Modelo\Conta\Titular
 {
     private $numero;
 

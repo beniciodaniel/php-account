@@ -1,8 +1,11 @@
 <?php
 
 
-namespace Banco\Modelo;
+namespace Banco\Modelo\Funcionario;
 
+
+use Banco\Modelo\Cpf;
+use Banco\Modelo\Pessoa;
 
 class Funcionario extends Pessoa
 {

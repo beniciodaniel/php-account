@@ -4,10 +4,10 @@
 namespace Banco\Modelo\Funcionario;
 
 
-class Gerente extends Funcionario
+class Diretor extends Funcionario
 {
     public function calculaBonificacao(): float
     {
-        return $this->recuperaSalario();
+        return $this->recuperaSalario() * 2;
     }
 }

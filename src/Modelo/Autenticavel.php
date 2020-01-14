@@ -4,7 +4,7 @@
 namespace Banco\Modelo;
 
 
-class Autenticavel
+interface Autenticavel
 {
-
+    public function podeAutenticar(string $senha) : bool;
 }

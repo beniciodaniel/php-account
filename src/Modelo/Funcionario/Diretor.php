@@ -4,7 +4,9 @@
 namespace Banco\Modelo\Funcionario;
 
 
-class Diretor extends Funcionario
+use Banco\Modelo\Autenticavel;
+
+class Diretor extends Funcionario implements Autenticavel
 {
     public function calculaBonificacao(): float
     {

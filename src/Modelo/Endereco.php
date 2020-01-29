@@ -3,7 +3,14 @@
 
 namespace Banco\Modelo;
 
-
+/**
+ * Class Endereco
+ * @package Banco\Modelo
+ * @property-read string $cidade
+ * @property-read string $bairro
+ * @property-read string $rua
+ * @property-read string $numero
+ */
 class Endereco
 {
      private $cidade;
@@ -46,6 +53,13 @@ class Endereco
     public function __toString():string
     {
         return "{$this->rua}, {$this->numero}, {$this->bairro}, {$this->cidade}";
+    }
+
+
+    public function __get(string $attribute)
+    {
+        $metodo = 'recupera' . ucfirst($attribute);
+        return $this->$metodo();
     }
 
 }

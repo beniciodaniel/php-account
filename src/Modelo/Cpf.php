@@ -3,7 +3,7 @@
 namespace Banco\Modelo;
 
 
-class Cpf extends \Banco\Modelo\Conta\Titular
+final class Cpf
 {
     private $numero;
 

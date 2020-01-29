@@ -26,7 +26,7 @@ abstract class Pessoa
         return $this->cpf->recuperaNumero();
     }
 
-    protected function validaNome(string $nomeTitular)
+    final protected function validaNome(string $nomeTitular)
     {
         if (strlen($nomeTitular) < 3)
         {

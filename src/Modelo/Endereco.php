@@ -13,10 +13,12 @@ namespace Banco\Modelo;
  */
 final class Endereco
 {
-     private $cidade;
-     private $bairro;
-     private $rua;
-     private $numero;
+    use AcessoPropriedades;
+
+    private $cidade;
+    private $bairro;
+    private $rua;
+    private $numero;
 
     public function __construct(string $cidade, string $bairro, string $rua, string $numero)
     {
@@ -54,12 +56,4 @@ final class Endereco
     {
         return "{$this->rua}, {$this->numero}, {$this->bairro}, {$this->cidade}";
     }
-
-
-    public function __get(string $attribute)
-    {
-        $metodo = 'recupera' . ucfirst($attribute);
-        return $this->$metodo();
-    }
-
 }
